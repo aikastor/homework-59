@@ -64,6 +64,8 @@ class MovieTracker extends Component {
     render() {
         return (
             <div className='MovieTracker'>
+                <b>Movie tracker app (with saving to local storage)</b>
+
                 <AddMovieForm
                     addMovie={(e)=>this.addMovie(e)}
                     onChange={this.handleChange}

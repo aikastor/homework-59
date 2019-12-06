@@ -7,6 +7,7 @@ class ChuckJokes extends Component {
     state ={
         jokes: []
     };
+
    async getJokes (howMany) {
        let promises = [];
        for (let i = 0; i < howMany; i++) {
@@ -25,6 +26,7 @@ class ChuckJokes extends Component {
     render() {
         return (
             <div className='ChuckJokes'>
+                <b>Chuck Norris Jokes!</b>
                 {this.state.jokes.map(joke=>(
                     <JokeCard
                         key={joke.id}
