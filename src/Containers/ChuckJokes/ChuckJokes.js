@@ -7,35 +7,21 @@ class ChuckJokes extends Component {
     state ={
         jokes: []
     };
+   async getJokes (howMany) {
+       let promises = [];
+       for (let i = 0; i < howMany; i++) {
+           let response = await fetch ('https://api.chucknorris.io/jokes/random');
+           if (response.ok) {
+               const joke = await response.json();
+               promises.push({txt: joke.value, id: joke.id});
+           }
+       }
+       Promise.all(promises)
+           .then(jokes => this.setState({jokes}));
+   };
     async componentDidMount() {
-        let promises = [];
-
-        for (let i = 0; i < 5; i++) {
-            let response = await fetch ('https://api.chucknorris.io/jokes/random');
-            if(response.ok) {
-                const joke = await response.json();
-                promises.push({txt: joke.value, id: joke.id});
-            }
-        }
-        Promise.all(promises)
-            .then(jokes => this.setState({jokes}));
-
+        this.getJokes(1)
     }
-     fetchJokes  = () => {
-        const promises = [];
-
-        for (let i = 0; i < 5; i++) {
-            let response =  fetch ('https://api.chucknorris.io/jokes/random');
-            if(response.ok) {
-                const joke = response.json();
-                console.log(joke);
-                promises.push({txt: joke.value, id: joke.id});
-                console.log(promises);
-            }
-        }
-        Promise.all(promises)
-            .then(jokes => this.setState({jokes}));
-    };
     render() {
         return (
             <div className='ChuckJokes'>
@@ -44,7 +30,7 @@ class ChuckJokes extends Component {
                         key={joke.id}
                         jokeTxt={joke.txt}/>
                 ))}
-                <Button onClick={this.fetchJokes}>new jokes</Button>
+                <Button onClick={()=>this.getJokes(5)}>new jokes</Button>
             </div>
         );
     }

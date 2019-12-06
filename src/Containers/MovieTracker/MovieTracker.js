@@ -31,6 +31,7 @@ class MovieTracker extends Component {
         const index = this.state.movies.findIndex(p => p.id === id);
         const movies = [...this.state.movies];
         const movie = {...movies[index]};
+
         movie.name = e.target.value;
         movies[index] = movie;
         this.setState({movies});
@@ -50,6 +51,7 @@ class MovieTracker extends Component {
             localStorage.setItem('movies', json);
         }
         const currentState = this.state.movies;
+
         currentState.forEach((movie, index)=>{
             if(prevState.movies[index] !== movie) {
                 const json = JSON.stringify(currentState);

@@ -1,9 +1,6 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 
-class Button extends Component {
-    shouldComponentUpdate(nextProps, nextState, nextContext) {
-       return this.props.onClick !== nextProps.onClick
-    }
+class Button extends PureComponent {
 
     render() {
         return (
