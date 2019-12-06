@@ -1,8 +1,9 @@
 import React from 'react';
+import './JokeCard.css';
 
 const JokeCard = (props) => {
     return (
-        <div>{props.jokeTxt}</div>
+        <div className='JokeCard'>{props.jokeTxt}</div>
     )
 };
 

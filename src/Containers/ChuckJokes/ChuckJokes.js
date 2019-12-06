@@ -1,6 +1,7 @@
-import React, {Component, Fragment} from 'react';
+import React, {Component} from 'react';
 import JokeCard from "../../components/JokeCard/JokeCard";
 import Button from "../../components/Button/Button";
+import './ChuckJokes.css';
 
 class ChuckJokes extends Component {
     state ={
@@ -37,14 +38,14 @@ class ChuckJokes extends Component {
     };
     render() {
         return (
-            <Fragment>
+            <div className='ChuckJokes'>
                 {this.state.jokes.map(joke=>(
                     <JokeCard
                         key={joke.id}
                         jokeTxt={joke.txt}/>
                 ))}
                 <Button onClick={this.fetchJokes}>new jokes</Button>
-            </Fragment>
+            </div>
         );
     }
 }

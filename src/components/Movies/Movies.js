@@ -11,9 +11,9 @@ const Movies = (props) => {
         />
     ));
     return (
-        <div>
+        <ul className='Movies'>
             {movies}
-        </div>
+        </ul>
 
     );
 };

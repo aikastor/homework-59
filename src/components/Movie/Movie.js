@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './Movie.css';
 
 class Movie extends Component {
 
@@ -8,11 +9,11 @@ class Movie extends Component {
 
     render() {
         return (
-            <div>
+            <li className='Movie'>
                 <input type="text" onChange={this.props.onChange}
                 value={this.props.movieName}/>
                 <button onClick={this.props.deleteMovie}>x</button>
-            </div>
+            </li>
         );
     }
 }

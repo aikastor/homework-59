@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import AddMovieForm from "../../components/AddMovieForm/AddMovieForm";
 import Movies from "../../components/Movies/Movies";
+import './MovieTracker.css';
 
 class MovieTracker extends Component {
     state = {
@@ -60,7 +61,7 @@ class MovieTracker extends Component {
 
     render() {
         return (
-            <div>
+            <div className='MovieTracker'>
                 <AddMovieForm
                     addMovie={(e)=>this.addMovie(e)}
                     onChange={this.handleChange}

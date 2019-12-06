@@ -1,4 +1,5 @@
 import React from 'react';
+import './AddMovieForm.css';
 
 const AddMovieForm = (props) => {
     return (
@@ -9,6 +10,7 @@ const AddMovieForm = (props) => {
                    autoFocus={true}
                    onChange={props.onChange}
                    value={props.value}
+                   className='MovieInput'
             />
             <input type="submit" value="Add"/>
         </form>

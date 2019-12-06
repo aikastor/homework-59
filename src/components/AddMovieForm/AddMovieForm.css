@@ -1,0 +1,10 @@
+.MovieInput {
+    border: 1px solid gray;
+    padding: 4px;
+    margin: 5px;
+}
+input[type=submit]{
+    background: aquamarine;
+    border: 2px solid aquamarine;
+    padding: 4px 8px;
+}

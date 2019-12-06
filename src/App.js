@@ -1,13 +1,14 @@
-import React, {Fragment} from 'react';
+import React  from 'react';
 import MovieTracker from "./Containers/MovieTracker/MovieTracker";
 import ChuckJokes from "./Containers/ChuckJokes/ChuckJokes";
+import './App.css';
 
 const App = () => {
     return (
-        <Fragment>
+        <div className='App'>
             <MovieTracker/>
             <ChuckJokes/>
-        </Fragment>
+        </div>
 
     );
 };
